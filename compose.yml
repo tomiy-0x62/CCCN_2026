@@ -1,0 +1,12 @@
+services:
+    tex_server:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: tex_live_2025_server
+        container_name: cccn2026_tex_server
+        tty: true
+        network_mode: host
+        volumes:
+            - ./docs:/home/ubuntu/docs
+        working_dir: /home/ubuntu/docs
