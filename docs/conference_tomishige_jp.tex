@@ -85,8 +85,47 @@ Fast DDSは50s程度、Cyclone DDSは23秒程度だった。
 
 この差の原因として、UDPソケットの受信バッファーが原因として考えられるため、各実装のソケット受信バッファーを変更して実験した。
 
+\begin{figure}[t]
+  \begin{tabular}{cc}
+    \begin{minipage}[t]{0.5\hsize}
+      \centering
+      % \includegraphics[keepaspectratio, scale=0.16]{images/graph_dds_pub_ori.png}
+      \subcaption{Fast DDS 1MiB}
+      \label{fig:ex_fast_dds_pub}
+    \end{minipage}
+    \begin{minipage}[t]{0.5\hsize}
+      \centering
+      % \includegraphics[keepaspectratio, scale=0.16]{images/graph_all_ori.png}
+      \subcaption{Fast DDS 10MiB} % unicast drop
+      \label{fig:ex_fast_uni}
+    \end{minipage} &
+  \end{tabular} \\
+  \begin{tabular}{cc}
+    \begin{minipage}[t]{0.5\hsize}
+      \centering
+      % \includegraphics[keepaspectratio, scale=0.16]{images/graph_dds_pub_ori.png}
+      \subcaption{Cyclone DDS 1MiB}
+      \label{fig:ex_fast_dds_pub}
+    \end{minipage}
+    \begin{minipage}[t]{0.5\hsize}
+      \centering
+      % \includegraphics[keepaspectratio, scale=0.16]{images/graph_all_ori.png}
+      \subcaption{Cyclone DDS 10MiB} % unicast drop
+      \label{fig:ex_fast_uni}
+    \end{minipage} &
+  \end{tabular} \\
+  \caption{Discovery Time}
+  \label{fig:ex_fast}
+\end{figure}
+
 Cyclone 1MBでも十分早い。
 Fast 10MBにすると改善するがそれでもCycloneに比べて遅い。
+
+疑問1. なぜFastはCycloneと比較して必要なソケットバッファが多いのか？
+
+シンプルにFast DDSのメッセージ処理速度が遅い可能性が極めて高い
+
+疑問2. CycloneとFastのdiscoveryの進み方の差はどのような実装、パラメータの差によるものなのか？
 
 各ノードの起動開始時刻を$t = 0$とし、
 図\ref{fig:ex_fast_dds_pub}は各ノードにおける発見済み出版モジュール数、
@@ -100,10 +139,11 @@ Fast 10MBにすると改善するがそれでもCycloneに比べて遅い。
 総ノード数を$P$, 各ノードの平均モジュール数を$E$、各ノードでの平均ドロップ率を$D$とすると、
 モジュール発見のメッセージ複雑度は$O\left(P^{2}ED^{2}\right)$
 と表せる。このため、ノード数が多くなるとメッセージ数が非常に多くなる。
-\section{まとめ}
-実験により、合計204ノード、408モジュールで構成されるDDSネットワークにおいてモジュール発見段階で多数のパケットドロップが発生し、
-全モジュールの発見に約50秒かかることが確認できた。
-また、モジュール発見の段階が問題の原因であることをメッセージ複雑度の計算によっても確認できた。
+
+% \section{まとめ}
+% 実験により、合計204ノード、408モジュールで構成されるDDSネットワークにおいてモジュール発見段階で多数のパケットドロップが発生し、
+% 全モジュールの発見に約50秒かかることが確認できた。
+% また、モジュール発見の段階が問題の原因であることをメッセージ複雑度の計算によっても確認できた。
 
 
 \end{document}

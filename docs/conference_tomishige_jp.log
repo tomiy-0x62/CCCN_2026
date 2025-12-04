@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.11.13)  3 DEC 2025 04:53
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.11.13)  4 DEC 2025 03:56
  restricted system commands enabled.
  file:line:error style messages enabled.
 **conference_tomishige_jp.tex
@@ -910,7 +910,35 @@ Package caption Info: New subtype `subtable' on input line 238.
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-(./conference_tomishige_jp.aux)
+(./conference_tomishige_jp.aux
+
+LaTeX Warning: Label `fig:ex_fast_dds_pub' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:ex_fast_dds_pub' multiply defined.
+
+
+LaTeX Warning: Label `fig:ex_fast_uni' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:ex_fast_uni' multiply defined.
+
+
+LaTeX Warning: Label `fig:ex_fast_dds_pub' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:ex_fast_dds_pub' multiply defined.
+
+
+LaTeX Warning: Label `fig:ex_fast_uni' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:ex_fast_uni' multiply defined.
+
+
+LaTeX Warning: Label `fig:ex_fast' multiply defined.
+
+)
 \openout1 = conference_tomishige_jp.aux
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
@@ -933,8 +961,7 @@ LaTeX Font Info:    Checking defaults for JY3/mc/m/n on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
 LaTeX Font Info:    Checking defaults for JT3/mc/m/n on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
-
-(/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count313
 \scratchdimen=\dimen191
@@ -1040,23 +1067,19 @@ LaTeX Font Info:    Trying to load font information for T1+lmss on input line 2
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `JT3/mc/b/n' in size <10> not available
-(Font)              Font shape `JT3/gt/m/n' tried instead on input line 32.
+(Font)              Font shape `JT3/gt/m/n' tried instead on input line 43.
 LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
-(Font)              scaled to size 9.24713pt on input line 32.
+(Font)              scaled to size 9.24713pt on input line 43.
 LaTeX Font Info:    Font shape `JY3/mc/b/n' in size <10> not available
-(Font)              Font shape `JY3/gt/m/n' tried instead on input line 32.
+(Font)              Font shape `JY3/gt/m/n' tried instead on input line 43.
 LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
-(Font)              scaled to size 9.24713pt on input line 32.
+(Font)              scaled to size 9.24713pt on input line 43.
 
 
-LaTeX Warning: Citation `RTPS-2.5-spec-disc' on page 1 undefined on input line 
-32.
+LaTeX Warning: Reference `fig:sdp_seq' on page 1 undefined on input line 43.
 
 
-LaTeX Warning: Reference `fig:sdp_seq' on page 1 undefined on input line 44.
-
-
-LaTeX Warning: Reference `fig:sdp_seq' on page 1 undefined on input line 53.
+LaTeX Warning: Reference `fig:sdp_seq' on page 1 undefined on input line 52.
 
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 65.
@@ -1069,11 +1092,19 @@ Overfull \hbox (27.33336pt too wide) in paragraph at lines 65--79
 [][][][] 
  []
 
+
+Overfull \hbox (27.33336pt too wide) in paragraph at lines 89--117
+[][][][] 
+ []
+
+
+Overfull \hbox (27.33336pt too wide) in paragraph at lines 89--117
+[][][][] 
+ []
+
 [1
 
-]
-No file conference_tomishige_jp.bbl.
-[2
+] [2
 
 ] (./conference_tomishige_jp.aux)
  ***********
@@ -1084,17 +1115,20 @@ L3 programming layer <2025-10-24>
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
 )
 
 Here is how much of LuaTeX's memory you used:
- 6665 strings out of 476081
+ 6663 strings out of 476081
  195698,552014 words of node,token memory allocated
  1230 words of node memory still in use:
    10 hlist, 2 vlist, 5 rule, 7 glue, 4 kern, 1 glyph, 269 attribute, 54 glue_sp
 ec, 36 attribute_list, 1 write, 13 user_defined nodes
-   avail lists: 1:33,2:58262,3:552,4:242,5:77,6:38,7:6415,8:8,9:2858,10:22,11:44
+   avail lists: 1:34,2:59427,3:557,4:310,5:90,6:66,7:6444,8:8,9:2612,10:22,11:84
 
- 28915 multiletter control sequences out of 65536+600000
+ 28913 multiletter control sequences out of 65536+600000
  66 fonts using 45167367 bytes
  119i,13n,128p,2071b,828s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/tex
@@ -1113,7 +1147,7 @@ al/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/20
 /fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/
 public/lm/lmr9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lms
 s12.pfb>
-Output written on conference_tomishige_jp.pdf (3 pages, 271388 bytes).
+Output written on conference_tomishige_jp.pdf (3 pages, 276699 bytes).
 
 PDF statistics: 78 PDF objects out of 1000 (max. 8388607)
  55 compressed objects within 1 object stream
