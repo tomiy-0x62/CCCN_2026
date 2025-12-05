@@ -65,15 +65,15 @@ SDPのスケーラビリティを検証するために、
   \begin{tabular}{cc}
     \begin{minipage}[t]{0.5\hsize}
       \centering
-      % \includegraphics[keepaspectratio, scale=0.16]{images/graph_dds_pub_ori.png}
-      \subcaption{Discovered pub modules}
-      \label{fig:ex_fast_dds_pub}
+      \includegraphics[keepaspectratio, scale=0.16]{images/graph_fast_1.png}
+      \subcaption{Fast DDS}
+      \label{fig:ex_fast_1}
     \end{minipage}
     \begin{minipage}[t]{0.5\hsize}
       \centering
-      % \includegraphics[keepaspectratio, scale=0.16]{images/graph_all_ori.png}
-      \subcaption{unicast packet drop} % unicast drop
-      \label{fig:ex_fast_uni}
+      \includegraphics[keepaspectratio, scale=0.16]{images/graph_cyclone_1.png}
+      \subcaption{Cyclone DDS}
+      \label{fig:ex_cyclone_1}
     \end{minipage} &
   \end{tabular} \\
   \caption{Discovery Time}
@@ -81,7 +81,8 @@ SDPのスケーラビリティを検証するために、
 \end{figure}
 
 実験結果を図\ref{fig:ex_fast}に示す。
-Fast DDSは50s程度、Cyclone DDSは23秒程度だった。
+Fast DDSは45s、Cyclone DDSは22sだった。
+Cycloneにはグラフに垂直なラインが見られるが、Fastには垂直なラインがみられない。
 
 この差の原因として、UDPソケットの受信バッファーが原因として考えられるため、各実装のソケット受信バッファーを変更して実験した。
 
@@ -89,56 +90,145 @@ Fast DDSは50s程度、Cyclone DDSは23秒程度だった。
   \begin{tabular}{cc}
     \begin{minipage}[t]{0.5\hsize}
       \centering
-      % \includegraphics[keepaspectratio, scale=0.16]{images/graph_dds_pub_ori.png}
+      \includegraphics[keepaspectratio, scale=0.16]{images/graph_fast_2.png}
       \subcaption{Fast DDS 1MiB}
-      \label{fig:ex_fast_dds_pub}
+      \label{fig:ex_fast_2}
     \end{minipage}
     \begin{minipage}[t]{0.5\hsize}
       \centering
-      % \includegraphics[keepaspectratio, scale=0.16]{images/graph_all_ori.png}
-      \subcaption{Fast DDS 10MiB} % unicast drop
-      \label{fig:ex_fast_uni}
+      \includegraphics[keepaspectratio, scale=0.16]{images/graph_fast_3.png}
+      \subcaption{Fast DDS 10MiB}
+      \label{fig:ex_fast_3}
     \end{minipage} &
   \end{tabular} \\
   \begin{tabular}{cc}
     \begin{minipage}[t]{0.5\hsize}
       \centering
-      % \includegraphics[keepaspectratio, scale=0.16]{images/graph_dds_pub_ori.png}
+      \includegraphics[keepaspectratio, scale=0.16]{images/graph_cyclone_2.png}
       \subcaption{Cyclone DDS 1MiB}
-      \label{fig:ex_fast_dds_pub}
+      \label{fig:ex_cyclone_2}
     \end{minipage}
     \begin{minipage}[t]{0.5\hsize}
       \centering
-      % \includegraphics[keepaspectratio, scale=0.16]{images/graph_all_ori.png}
-      \subcaption{Cyclone DDS 10MiB} % unicast drop
-      \label{fig:ex_fast_uni}
+      \includegraphics[keepaspectratio, scale=0.16]{images/graph_cyclone_3.png}
+      \subcaption{Cyclone DDS 10MiB}
+      \label{fig:ex_cyclone_3}
     \end{minipage} &
   \end{tabular} \\
   \caption{Discovery Time}
   \label{fig:ex_fast}
 \end{figure}
 
-Cyclone 1MBでも十分早い。
-Fast 10MBにすると改善するがそれでもCycloneに比べて遅い。
 
-疑問1. なぜFastはCycloneと比較して必要なソケットバッファが多いのか？
+\begin{table}
+  \centering\small
+  \caption{Discovery Time}
+  \label{tab:disc_time}
+  \smallskip
+  \begin{tabular}{|l|r|r|} \hline
+    Impl & recv buf size (MiB) & Discovery Time (s) \\ \hline
+    Fast & 1 & 36 \\ \hline
+    Fast & 10 & 36 \\ \hline
+    Cyclone & 1 & 21 \\ \hline
+    Cyclone & 10 & 22 \\ \hline
+  \end{tabular}
+\end{table}
+どちらの実装でも1MiB, 10MiBで変化無し。
+Cycloneはデフォルトが1MiBなので明示的に指定しても変化無し。
+Fastはデフォルトではカーネルのデフォルト値を使用し、実験環境では256KiB。1MiBに変更すると改善するがそれでもCycloneに比べて遅い。
 
-シンプルにFast DDSのメッセージ処理速度が遅い可能性が極めて高い
+1. なぜFastはCycloneと比較してソケットバッファのサイズが同じでもDiscoveryが遅いのか？
+
+あるノードに対して時間あたりに送信されるメッセージ数
+\begin{figure}[t]
+  \begin{tabular}{cc}
+    \begin{minipage}[t]{0.5\hsize}
+      \centering
+      \includegraphics[keepaspectratio, scale=0.1]{images/fast_receive_per_node.png}
+        \subcaption{Fast DDS}
+      \label{fig:fast_send_msg}
+    \end{minipage}
+    \begin{minipage}[t]{0.5\hsize}
+      \centering
+      \includegraphics[keepaspectratio, scale=0.1]{images/cyclone_receive_per_node.png}
+      \subcaption{Cyclone DDS}
+      \label{fig:cyclone_send_msg}
+    \end{minipage} &
+  \end{tabular}
+  \caption{send message}
+  \label{fig:ex_fast}
+\end{figure}
+
+\begin{figure}[t]
+  \begin{tabular}{cc}
+    \begin{minipage}[t]{0.5\hsize}
+      \centering
+      \includegraphics[keepaspectratio, scale=0.16]{images/graph_fast_uni_drop_1.png}
+      \subcaption{Fast DDS Uni}
+      \label{fig:ex_fast_2}
+    \end{minipage}
+    \begin{minipage}[t]{0.5\hsize}
+      \centering
+      \includegraphics[keepaspectratio, scale=0.16]{images/graph_fast_mul_drop_1.png}
+      \subcaption{Fast DDS Multi}
+      \label{fig:ex_fast_3}
+    \end{minipage} &
+  \end{tabular} \\
+  \begin{tabular}{cc}
+    \begin{minipage}[t]{0.5\hsize}
+      \centering
+      \includegraphics[keepaspectratio, scale=0.16]{images/graph_cyclone_mul_drop_1.png}
+      \subcaption{Cyclone DDS Uni}
+      \label{fig:ex_cyclone_2}
+    \end{minipage}
+    \begin{minipage}[t]{0.5\hsize}
+      \centering
+      \includegraphics[keepaspectratio, scale=0.16]{images/graph_cyclone_mul_drop_1.png}
+      \subcaption{Cyclone DDS Multi}
+      \label{fig:ex_cyclone_3}
+    \end{minipage} &
+  \end{tabular} \\
+  \caption{Discovery Time}
+  \label{fig:ex_fast}
+\end{figure}
+
+シンプルにFast DDSのメッセージ処理速度が遅い可能性が高い
+Fast DDSは意図的に5msのレイテンシを入れてるが、それよりも遥かに実測レイテンシが大きい。
+TODO: CPU負荷の観点からチェック
+
+Fast DDS: 100ms〜200ms
+
+HB Multicast 1.873854
+
+ACKNACK 1.906739
+
+DATA(w) 2.124689
+
+Cyclone DDS: ほぼ0
+
+HB Multicast 0.002968
+
+ACKNACK 0.003874
+
+DATA(w) 0.004259
 
 疑問2. CycloneとFastのdiscoveryの進み方の差はどのような実装、パラメータの差によるものなのか？
 
-各ノードの起動開始時刻を$t = 0$とし、
-図\ref{fig:ex_fast_dds_pub}は各ノードにおける発見済み出版モジュール数、
-図\ref{fig:ex_fast_uni}は各UDPソケットにおける累積パケットドロップ数である。
-図\ref{fig:ex_fast_dds_pub}からモジュール発見の完了まで50秒程度かかっていることが観測された。
-図\ref{fig:ex_fast_uni}から出版モジュール発見が完了するまでの間、多数のパケットがドロップしており、
-図\ref{fig:ex_fast_dds_pub}でモジュールを新規に発見が発生してい時間と図\ref{fig:ex_fast_uni}でパケットドロップが多発している時間が一致しているため、
-モジュール発見段階でパケットドロップが発生しているといえる。
+メッセージの送信周期や送信方法、送信タイミングなどの差はあるが、影響はほとんど無さそう。
+すべてFast DDSのメッセージ処理速度で説明できる。
+Cyclone DDS: DATA(w)のunicast, multicastの割合が1:1
+Fast DDS: DATA(w)のunicast, multicastの割合が1:0
 
-パケットドロップが多発する原因としてモジュール発見のメッセージ数が大きいことが考えられる。
-総ノード数を$P$, 各ノードの平均モジュール数を$E$、各ノードでの平均ドロップ率を$D$とすると、
-モジュール発見のメッセージ複雑度は$O\left(P^{2}ED^{2}\right)$
-と表せる。このため、ノード数が多くなるとメッセージ数が非常に多くなる。
+Fastでノード数を半分にするとどうなるのか？
+12s程度でdiscovery完了するようになる。
+グラフに垂直なラインがみられるようになった。
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[keepaspectratio, scale=0.4]{images/graph_fast_4.png}
+  \caption{Fast DDS half node}
+  \label{fig:fast_half}
+\end{figure}
 
 % \section{まとめ}
 % 実験により、合計204ノード、408モジュールで構成されるDDSネットワークにおいてモジュール発見段階で多数のパケットドロップが発生し、

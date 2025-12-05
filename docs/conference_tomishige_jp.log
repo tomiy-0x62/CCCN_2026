@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.11.13)  4 DEC 2025 03:56
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.11.13)  5 DEC 2025 03:40
  restricted system commands enabled.
  file:line:error style messages enabled.
 **conference_tomishige_jp.tex
@@ -912,28 +912,34 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 (./conference_tomishige_jp.aux
 
-LaTeX Warning: Label `fig:ex_fast_dds_pub' multiply defined.
+LaTeX Warning: Label `fig:ex_fast' multiply defined.
 
 
-LaTeX Warning: Label `sub@fig:ex_fast_dds_pub' multiply defined.
+LaTeX Warning: Label `fig:ex_fast' multiply defined.
 
 
-LaTeX Warning: Label `fig:ex_fast_uni' multiply defined.
+LaTeX Warning: Label `fig:ex_fast_2' multiply defined.
 
 
-LaTeX Warning: Label `sub@fig:ex_fast_uni' multiply defined.
+LaTeX Warning: Label `sub@fig:ex_fast_2' multiply defined.
 
 
-LaTeX Warning: Label `fig:ex_fast_dds_pub' multiply defined.
+LaTeX Warning: Label `fig:ex_fast_3' multiply defined.
 
 
-LaTeX Warning: Label `sub@fig:ex_fast_dds_pub' multiply defined.
+LaTeX Warning: Label `sub@fig:ex_fast_3' multiply defined.
 
 
-LaTeX Warning: Label `fig:ex_fast_uni' multiply defined.
+LaTeX Warning: Label `fig:ex_cyclone_2' multiply defined.
 
 
-LaTeX Warning: Label `sub@fig:ex_fast_uni' multiply defined.
+LaTeX Warning: Label `sub@fig:ex_cyclone_2' multiply defined.
+
+
+LaTeX Warning: Label `fig:ex_cyclone_3' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:ex_cyclone_3' multiply defined.
 
 
 LaTeX Warning: Label `fig:ex_fast' multiply defined.
@@ -1087,26 +1093,134 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 65.
 LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
 (Font)              scaled to size 6.47299pt on input line 65.
+<images/graph_fast_1.png, id=12, 602.25pt x 401.5pt>
+File: images/graph_fast_1.png Graphic file (type png)
+<use images/graph_fast_1.png>
+Package luatex.def Info: images/graph_fast_1.png  used on input line 68.
+(luatex.def)             Requested size: 96.36195pt x 64.2413pt.
+<images/graph_cyclone_1.png, id=13, 602.25pt x 401.5pt>
+File: images/graph_cyclone_1.png Graphic file (type png)
+<use images/graph_cyclone_1.png>
+Package luatex.def Info: images/graph_cyclone_1.png  used on input line 74.
+(luatex.def)             Requested size: 96.36195pt x 64.2413pt.
 
 Overfull \hbox (27.33336pt too wide) in paragraph at lines 65--79
 [][][][] 
  []
 
+<images/graph_fast_2.png, id=14, 602.25pt x 401.5pt>
+File: images/graph_fast_2.png Graphic file (type png)
+<use images/graph_fast_2.png>
+Package luatex.def Info: images/graph_fast_2.png  used on input line 93.
+(luatex.def)             Requested size: 96.36195pt x 64.2413pt.
+<images/graph_fast_3.png, id=15, 602.25pt x 401.5pt>
+File: images/graph_fast_3.png Graphic file (type png)
+<use images/graph_fast_3.png>
+Package luatex.def Info: images/graph_fast_3.png  used on input line 99.
+(luatex.def)             Requested size: 96.36195pt x 64.2413pt.
+<images/graph_cyclone_2.png, id=16, 602.25pt x 401.5pt>
+File: images/graph_cyclone_2.png Graphic file (type png)
+<use images/graph_cyclone_2.png>
+Package luatex.def Info: images/graph_cyclone_2.png  used on input line 107.
+(luatex.def)             Requested size: 96.36195pt x 64.2413pt.
+<images/graph_cyclone_3.png, id=17, 602.25pt x 401.5pt>
+File: images/graph_cyclone_3.png Graphic file (type png)
+<use images/graph_cyclone_3.png>
+Package luatex.def Info: images/graph_cyclone_3.png  used on input line 113.
+(luatex.def)             Requested size: 96.36195pt x 64.2413pt.
 
-Overfull \hbox (27.33336pt too wide) in paragraph at lines 89--117
+Overfull \hbox (27.33336pt too wide) in paragraph at lines 90--118
 [][][][] 
  []
 
 
-Overfull \hbox (27.33336pt too wide) in paragraph at lines 89--117
+Overfull \hbox (27.33336pt too wide) in paragraph at lines 90--118
 [][][][] 
+ []
+
+
+Overfull \hbox (10.83725pt too wide) in paragraph at lines 128--135
+ [][][][] 
  []
 
 [1
 
-] [2
+<./images/graph_fast_1.png><./images/graph_cyclone_1.png>]
+<images/fast_receive_per_node.png, id=25, 1428.83812pt x 611.28375pt>
+File: images/fast_receive_per_node.png Graphic file (type png)
+<use images/fast_receive_per_node.png>
+Package luatex.def Info: images/fast_receive_per_node.png  used on input line 1
+47.
+(luatex.def)             Requested size: 142.89218pt x 61.13194pt.
 
-] (./conference_tomishige_jp.aux)
+Overfull \hbox (36.55017pt too wide) in paragraph at lines 147--148
+ [][] 
+ []
+
+<images/cyclone_receive_per_node.png, id=26, 1373.13pt x 590.205pt>
+File: images/cyclone_receive_per_node.png Graphic file (type png)
+<use images/cyclone_receive_per_node.png>
+Package luatex.def Info: images/cyclone_receive_per_node.png  used on input lin
+e 153.
+(luatex.def)             Requested size: 137.32104pt x 59.02396pt.
+
+Overfull \hbox (30.97903pt too wide) in paragraph at lines 153--154
+ [][] 
+ []
+
+
+Overfull \hbox (27.33336pt too wide) in paragraph at lines 144--158
+[][][][] 
+ []
+
+<images/graph_fast_uni_drop_1.png, id=27, 602.25pt x 401.5pt>
+File: images/graph_fast_uni_drop_1.png Graphic file (type png)
+<use images/graph_fast_uni_drop_1.png>
+Package luatex.def Info: images/graph_fast_uni_drop_1.png  used on input line 1
+66.
+(luatex.def)             Requested size: 96.36195pt x 64.2413pt.
+<images/graph_fast_mul_drop_1.png, id=28, 602.25pt x 401.5pt>
+File: images/graph_fast_mul_drop_1.png Graphic file (type png)
+<use images/graph_fast_mul_drop_1.png>
+Package luatex.def Info: images/graph_fast_mul_drop_1.png  used on input line 1
+72.
+(luatex.def)             Requested size: 96.36195pt x 64.2413pt.
+<images/graph_cyclone_mul_drop_1.png, id=29, 602.25pt x 401.5pt>
+File: images/graph_cyclone_mul_drop_1.png Graphic file (type png)
+<use images/graph_cyclone_mul_drop_1.png>
+Package luatex.def Info: images/graph_cyclone_mul_drop_1.png  used on input lin
+e 180.
+(luatex.def)             Requested size: 96.36195pt x 64.2413pt.
+File: images/graph_cyclone_mul_drop_1.png Graphic file (type png)
+<use images/graph_cyclone_mul_drop_1.png>
+Package luatex.def Info: images/graph_cyclone_mul_drop_1.png  used on input lin
+e 186.
+(luatex.def)             Requested size: 96.36195pt x 64.2413pt.
+
+Overfull \hbox (27.33336pt too wide) in paragraph at lines 163--191
+[][][][] 
+ []
+
+
+Overfull \hbox (27.33336pt too wide) in paragraph at lines 163--191
+[][][][] 
+ []
+
+<images/graph_fast_4.png, id=30, 602.25pt x 401.5pt>
+File: images/graph_fast_4.png Graphic file (type png)
+<use images/graph_fast_4.png>
+Package luatex.def Info: images/graph_fast_4.png  used on input line 228.
+(luatex.def)             Requested size: 240.89572pt x 160.59715pt.
+
+Overfull \hbox (28.2117pt too wide) in paragraph at lines 228--229
+ [][] 
+ []
+
+[2<./images/graph_fast_2.png><./images/graph_fast_3.png><./images/graph_cyclone_
+2.png><./images/graph_cyclone_3.png><./images/fast_receive_per_node.png><./image
+s/cyclone_receive_per_node.png><./images/graph_fast_uni_drop_1.png><./images/gra
+ph_fast_mul_drop_1.png><./images/graph_cyclone_mul_drop_1.png><./images/graph_fa
+st_4.png>] (./conference_tomishige_jp.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-10-24>
@@ -1121,36 +1235,31 @@ LaTeX Warning: There were multiply-defined labels.
 )
 
 Here is how much of LuaTeX's memory you used:
- 6663 strings out of 476081
- 195698,552014 words of node,token memory allocated
+ 6804 strings out of 476081
+ 195703,552014 words of node,token memory allocated
  1230 words of node memory still in use:
    10 hlist, 2 vlist, 5 rule, 7 glue, 4 kern, 1 glyph, 269 attribute, 54 glue_sp
 ec, 36 attribute_list, 1 write, 13 user_defined nodes
-   avail lists: 1:34,2:59427,3:557,4:310,5:90,6:66,7:6444,8:8,9:2612,10:22,11:84
-
- 28913 multiletter control sequences out of 65536+600000
+   avail lists: 1:34,2:55101,3:511,4:482,5:126,6:112,7:6127,8:2,9:2503,10:22,11:
+80
+ 29015 multiletter control sequences out of 65536+600000
  66 fonts using 45167367 bytes
- 119i,13n,128p,2071b,828s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/tex
-live/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2025/t
-exmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2025/texmf-dist/f
-onts/enc/dvips/lm/lm-ec.enc}</usr/local/texlive/2025/texmf-dist/fonts/opentype/p
-ublic/haranoaji/HaranoAjiGothic-Medium.otf></usr/local/texlive/2025/texmf-dist/f
-onts/opentype/public/haranoaji/HaranoAjiMincho-Regular.otf></usr/local/texlive/2
-025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2025/texmf-d
-ist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/t
-ype1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public
-/lm/lmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.p
-fb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/loc
-al/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/20
-25/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2025/texmf-dist
-/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/
-public/lm/lmr9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lms
-s12.pfb>
-Output written on conference_tomishige_jp.pdf (3 pages, 276699 bytes).
+ 119i,16n,128p,2071b,838s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</usr/local/tex
+live/2025/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiGothic-Medium.otf>
+</usr/local/texlive/2025/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiMin
+cho-Regular.otf></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10
+.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/
+local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texliv
+e/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf
+-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/t
+ype1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/l
+m/lmr9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss12.pfb>
 
-PDF statistics: 78 PDF objects out of 1000 (max. 8388607)
- 55 compressed objects within 1 object stream
+Output written on conference_tomishige_jp.pdf (3 pages, 865078 bytes).
+
+PDF statistics: 75 PDF objects out of 1000 (max. 8388607)
+ 41 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 100000000)
 
